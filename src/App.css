@@ -1,38 +1,153 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgb(243, 224, 224);
+}
+.QuestionNumber {
+  font-size: 35px;
+  font-weight: inherit;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  margin: 50px 0;
+}
+p{
+  font-size: 25px;
+  font-weight: bold;
+}
+.ProgressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Progress {
+  height: 100%;
+  background-color: black;
+  border-radius: 5px;
+  width: 0;
+  transition: width 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.TopBar {
+  width: 100%;
+  height: 0px; 
+  background-color: #898b89;
+}
+.PerBar {
+  /* margin-top: 0px; */
+  height: 20px;
+  background-color: #898b89;
+  border-radius: 10px;
+  overflow: hidden;
+  border-style:solid;
+}
+.PerProgress {
+  height: 100px;;
+  background-color: #0a0a0a;
+  transition: width 0.3s ease;
+}
+.Score {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin-right: 10px;
+  margin-top: 40px;
+
+}
+
+.MaxScore {
+  font-size: 15px; 
+  font-weight: bold;
+  color: black;  
+  margin-left: 350px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  background-color: #898b89;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.Options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.Options button {
+  padding: 8px 10px;
+  font-size: 15px; 
+  font-weight:550;
+  background-color: #d7d8d7;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Options button.selected {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Result {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Result p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
+
+.Stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.Star {
+  font-size: 24px;
+  color: #ccc; 
+  margin-right: 5px;
+}
+
+.Star.filled {
+  color: black; 
+}
+
+/* For a 1-star rating (easy) */
+.Star:nth-child(1) {
+  color: black;
+}
+
+/* For a 2-star rating (medium) */
+.Star:nth-child(1) ~ .Star:nth-child(2) {
+  color: black;
+}
+
+/* For a 3-star rating (hard) */
+.Star:nth-child(1) ~ .Star:nth-child(3) {
+  color: black;
+}
+
